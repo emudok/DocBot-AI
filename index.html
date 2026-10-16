@@ -178,8 +178,13 @@
                 sintomaNormalizado.includes("falta de ar")
             ) {
                 respostaBot = "[EMERGÊNCIA VERMELHA] Dirija-se ao pronto-socorro. ISENTO (R$ 0,00)";
+            } else if (
+                sintomaNormalizado.includes("unimed") ||
+                sintomaNormalizado.includes("convenio") ||
+                sintomaNormalizado.includes("plano")
+            ) {
+                respostaBot = "[CONVÊNIO ACEITO] Encaminhado para rede credenciada. Copagamento: R$ 35,00";
             } else {
-                // Regra inicial de triagem
                 respostaBot = "[TRIAGEM PADRÃO] Encaminhado para consulta geral. Valor: R$ 150,00";
             }
 
